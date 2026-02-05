@@ -21,35 +21,44 @@
 
 // Explanation: Compared with 10, 20, 30 (found at index 2 with 3 comparisons)
 #include <stdio.h>
-
-int main() {
-    int n, i, k;
-    int arr[100];
-    int comparisons = 0;
-    int found = -1;
-
+int main()
+{
+    int n;
+    printf("Enter number of elements in the array: ");
     scanf("%d", &n);
 
-    for (i = 0; i < n; i++) {
+    int arr[n];
+    printf("Enter the elements of the array: ");
+    for (int i = 0; i < n; i++)
+    {
         scanf("%d", &arr[i]);
     }
 
+    int k;
+    printf("Enter the key to search: ");
     scanf("%d", &k);
 
-    for (i = 0; i < n; i++) {
+    int comparisons = 0;
+    int foundIndex = -1;
+
+    for (int i = 0; i < n; i++)
+    {
         comparisons++;
-        if (arr[i] == k) {
-            found = i;
+        if (arr[i] == k)
+        {
+            foundIndex = i;
             break;
         }
     }
 
-    if (found != -1) {
-        printf("Found at index %d\n", found);
-    } else {
+    if (foundIndex != -1)
+    {
+        printf("Found at index %d\n", foundIndex);
+    }
+    else
+    {
         printf("Not Found\n");
     }
-
     printf("Comparisons = %d\n", comparisons);
 
     return 0;
